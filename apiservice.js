@@ -1,10 +1,10 @@
-// Fase 3: Integración con API externa y manejo de errores HTTP
+
 class ApiService {
   constructor() {
     this.baseUrl = 'https://jsonplaceholder.typicode.com';
   }
 
-  // Simulación de autenticación mediante API
+  //  API
   async login(email, password) {
     try {
       const response = await fetch(`${this.baseUrl}/users/1`);
@@ -16,13 +16,13 @@ class ApiService {
     }
   }
 
-  // Consulta de citas simulando petición GET a API
+  // Consulta de citas
   async fetchAppointments() {
     try {
       const response = await fetch(`${this.baseUrl}/posts?_limit=3`);
       if (!response.ok) throw new Error(`Error en servidor: ${response.status}`);
       
-      // Mapeo de respuesta de la API a modelo de Cita Médica
+  
       return [
         { id: 1, doctor: 'Dr. Carlos Mendoza', specialty: 'Cardiología', date: '2026-10-12', time: '09:00', status: 'Confirmada' },
         { id: 2, doctor: 'Dra. Ana Restrepo', specialty: 'Dermatología', date: '2026-10-18', time: '14:30', status: 'Confirmada' },
@@ -33,7 +33,7 @@ class ApiService {
     }
   }
 
-  // Modificación simulada vía PUT/PATCH
+
   async updateAppointment(id, newDate, newTime) {
     try {
       const response = await fetch(`${this.baseUrl}/posts/${id}`, {
@@ -48,7 +48,7 @@ class ApiService {
     }
   }
 
-  // Cancelación simulada vía DELETE
+  // Cancelación cita
   async cancelAppointment(id) {
     try {
       const response = await fetch(`${this.baseUrl}/posts/${id}`, { method: 'DELETE' });

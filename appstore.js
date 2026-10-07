@@ -1,4 +1,4 @@
-// Fase 2 & 3: Manejo de Estado Centralizado y Persistencia
+
 class AppStore {
   constructor() {
     this.state = {

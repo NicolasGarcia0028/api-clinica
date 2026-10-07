@@ -1,4 +1,4 @@
-// Fase 1 & 3: Flujos de Interacción con la Interfaz
+
 class UI {
   constructor() {
     this.loginView = document.getElementById('login-view');

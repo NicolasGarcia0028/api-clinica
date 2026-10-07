@@ -1,8 +1,6 @@
-// En js/app.js
 
 class AppController {
   constructor() {
-    // Escucha cambios de estado para actualizar la interfaz
     appStore.subscribe(state => ui.renderView(state));
   }
 
@@ -71,7 +69,7 @@ class AppController {
   }
 }
 
-// Instancia global de appController
+// appController
 const appController = new AppController();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -97,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Event listener para cerrar sesión
+  //  cerrar sesión
   const logoutBtn = document.getElementById('logout-btn');
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => appController.logout());
